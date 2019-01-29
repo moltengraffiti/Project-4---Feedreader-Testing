@@ -16,6 +16,7 @@ $(function () {
 
     const bodyClass = document.querySelector('body');
     const menu = document.querySelector('.menu-icon-link');
+    const feed=document.querySelector('.feed');
 
     describe('RSS Feeds', function () {
         /* This is our first test - it tests to make sure that the
@@ -74,10 +75,14 @@ $(function () {
     describe('Initial Entries', function () {
 
         beforeEach(function(done){
-            loadFeed(0);
-            done();
+            loadFeed(0, done);
+            //done();
         });
 
+            it('Feed has loaded, has at least on entry', function(){
+                expect(feed.children.length>0).toBe(true);
+
+            });
     });
 
     /* TODO: Write a new test suite named "The menu" */
