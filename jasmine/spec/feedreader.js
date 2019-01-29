@@ -13,6 +13,10 @@ $(function() {
     * a related set of tests. This suite is all about the RSS
     * feeds definitions, the allFeeds variable in our application.
     */
+
+   const bodyClass=document.querySelector('body');
+   const menu=document.querySelector('.menu-icon-link');
+
     describe('RSS Feeds', function() {
         /* This is our first test - it tests to make sure that the
          * allFeeds variable has been defined and that it is not
@@ -55,8 +59,15 @@ $(function() {
 describe('The menu', function(){
 
     it('The menu is hidden by default', function(){
-            const bodyClass=document.querySelector('body');
             expect(bodyClass.classList.contains('menu-hidden')).toBe(true);
+    });
+
+    it('The menu toggles when clicked', function(){      
+        menu.click();
+        expect(bodyClass.classList.contains('menu-hidden')).toBe(false);
+        menu.click();
+        expect(bodyClass.classList.contains('menu-hidden')).toBe(true);
+
     });
 });
     /* TODO: Write a new test suite named "The menu" */
