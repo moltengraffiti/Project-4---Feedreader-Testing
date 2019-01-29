@@ -52,7 +52,13 @@ $(function() {
          });
     });
 
+describe('The menu', function(){
 
+    it('The menu is hidden by default', function(){
+            const bodyClass=document.querySelector('body');
+            expect(bodyClass.classList.contains('menu-hidden')).toBe(true);
+    });
+});
     /* TODO: Write a new test suite named "The menu" */
 
         /* TODO: Write a test that ensures the menu element is
