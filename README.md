@@ -2,9 +2,11 @@
 # Feedreader Testing
 
 ## Table of Contents
+
 - [Feedreader Testing](#feedreader-testing)
   - [Table of Contents](#table-of-contents)
   - [About this Project](#about-this-project)
+    - [Items tested](#items-tested)
   - [Instructions](#instructions)
   - [Authors](#authors)
   - [Tools](#tools)
@@ -14,7 +16,7 @@
 
 The project involves uisng Jasmine to write a number of tests against a pre-existing application.
 
-**Items tested**
+### Items tested
 
 1) The feed has loaded successfuly with at least one entry
 2) Each feed item has a non empty URL.
@@ -32,7 +34,7 @@ The completed project can be downloaded or cloned from the GitHub repository [he
 
 ## Authors
 
-Source code provided as part of Project 4 - Feed Reader Testing in the FEND nanodegree by Udacity. 
+Source code provided as part of Project 4 - Feed Reader Testing in the FEND nanodegree by Udacity.
 
 ## Tools
 
