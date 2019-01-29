@@ -16,7 +16,7 @@ $(function () {
 
     const bodyClass = document.querySelector('body');
     const menu = document.querySelector('.menu-icon-link');
-    const feed=document.querySelector('.feed');
+    const feed = document.querySelector('.feed');
 
     describe('RSS Feeds', function () {
         /* This is our first test - it tests to make sure that the
@@ -74,17 +74,52 @@ $(function () {
 
     describe('Initial Entries', function () {
 
-        beforeEach(function(done){
+        beforeEach(function (done) {
             loadFeed(0, done);
             //done();
         });
 
-            it('Feed has loaded, has at least on entry', function(){
-                expect(feed.children.length>0).toBe(true);
+        it('Feed has loaded, has at least one entry', function () {
+            expect(feed.children.length > 0).toBe(true);
 
-            });
+        });
     });
 
+    describe('New Feed Selection', function () {
+
+        let child1;
+        let child2;
+
+        beforeEach(function (done) {
+            loadFeed(0);
+            if (feed.hasChildNodes) {
+                child1 = feed.childNodes;
+            }
+            loadFeed(1, done);
+            if (feed.hasChildNodes) {
+                child2 = feed.childNodes;
+            }
+        });
+
+        //feed1=Array.from(feed.children);
+        //console.log(feed1);
+        // console.log(feed1.length);
+
+
+        // feed2=Array.from(feed.children)
+        // console.log(feed2);
+        // console.log(feed2.length);
+
+
+        it('Feed has refreshed with new content', function () {
+
+            for (let i = 0; i < child1.length; i++) {
+                for (let j = 0; j < child2.length; j++) {
+                    expect(child1[i].innerHTML===child2[j].innerHTML).toBe(false);
+                };
+            };
+        });
+    });
     /* TODO: Write a new test suite named "The menu" */
 
     /* TODO: Write a test that ensures the menu element is
@@ -114,4 +149,4 @@ $(function () {
      * by the loadFeed function that the content actually changes.
      * Remember, loadFeed() is asynchronous.
      */
-}());
+});
