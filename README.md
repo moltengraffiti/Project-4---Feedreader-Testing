@@ -20,7 +20,7 @@ The project involves uisng Jasmine to write a number of tests against a pre-exis
 
 1) The feed has loaded successfuly with at least one entry
 2) Each feed item has a non empty URL.
-3) All feed have a non empty name.
+3) All feeds have a non empty name.
 4) The menu is hidden by default and toggles on/off when clicked.
 5) If the feed is refreshed, it contains new items
 
